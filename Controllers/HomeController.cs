@@ -1,8 +1,8 @@
-using AbilityExpose.Models;
+using SkillExpose.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace AbilityExpose.Controllers
+namespace SkillExpose.Controllers
 {
     public class HomeController : Controller
     {

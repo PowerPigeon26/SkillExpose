@@ -1,4 +1,4 @@
-namespace AbilityExpose.Models
+namespace SkillExpose.Models
 {
     public class ErrorViewModel
     {

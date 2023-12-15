@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Repos\AbilityExpose
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/Repos/AbilityExpose/Views/Ability/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpbGl0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Repos/AbilityExpose/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "E:\\Repos\\AbilityExpose\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AbilityExpose.bundle.scp.css",
-      "PackagePath": "staticwebassets\\AbilityExpose.bundle.scp.css"
+      "Id": "E:\\Repos\\AbilityExpose\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SkillExpose.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SkillExpose.bundle.scp.css"
     },
     {
       "Id": "E:\\Repos\\AbilityExpose\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AbilityExpose.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SkillExpose.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AbilityExpose.props",
-      "PackagePath": "build\\AbilityExpose.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SkillExpose.props",
+      "PackagePath": "build\\SkillExpose.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AbilityExpose.props",
-      "PackagePath": "buildMultiTargeting\\AbilityExpose.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SkillExpose.props",
+      "PackagePath": "buildMultiTargeting\\SkillExpose.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AbilityExpose.props",
-      "PackagePath": "buildTransitive\\AbilityExpose.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SkillExpose.props",
+      "PackagePath": "buildTransitive\\SkillExpose.props"
     }
   ],
   "ElementsToRemove": []

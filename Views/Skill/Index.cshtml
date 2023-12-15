@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Skill>
+
+<h2>Skills</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Skill Name</th>
+        <th>Game</th>
+    </tr>
+
+    @foreach (var skill in @Model)
+    {
+        <tr>
+            <td>@skill.ID</td>
+            <td>@skill.Name</td>
+            <td>@skill.Game</td>
+        </tr>
+    }
+
+</table>
