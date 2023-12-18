@@ -1825,11 +1825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Repos\\AbilityExpose\\SkillExpose.csproj",
+      "projectUniqueName": "E:\\Repos\\SkillExpose\\SkillExpose.csproj",
       "projectName": "SkillExpose",
-      "projectPath": "E:\\Repos\\AbilityExpose\\SkillExpose.csproj",
+      "projectPath": "E:\\Repos\\SkillExpose\\SkillExpose.csproj",
       "packagesPath": "C:\\Users\\maver\\.nuget\\packages\\",
-      "outputPath": "E:\\Repos\\AbilityExpose\\obj\\",
+      "outputPath": "E:\\Repos\\SkillExpose\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maver\\AppData\\Roaming\\NuGet\\NuGet.Config",

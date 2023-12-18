@@ -3,16 +3,16 @@
 <h2>Skills</h2>
 <table class="table">
     <tr>
-        <th>ID</th>
         <th>Skill Name</th>
+        <th>Type</th>
         <th>Game</th>
     </tr>
 
     @foreach (var skill in @Model)
     {
         <tr>
-            <td>@skill.ID</td>
-            <td>@skill.Name</td>
+            <td><a href=/Skill/ViewSkill/@skill.ID>@skill.Name</a></td>
+            <td>@skill.Type</td>
             <td>@skill.Game</td>
         </tr>
     }

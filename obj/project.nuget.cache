@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zqz/CVmeNdpS0Q3N46HbSk9VHK8rChimAi+JLjC0mjZiVekf1QVo5+otl/PKsMk4qAEBTORO86B6eForxttSEA==",
+  "dgSpecHash": "vKzs3J76PYiQIwas02wbqkMEowCU8wiw43/M3vEKhsh0MSVkLeyknLj1Rwmz3ewUwwz99U2XJ5n1v+m1gk0dBw==",
   "success": true,
-  "projectFilePath": "E:\\Repos\\AbilityExpose\\SkillExpose.csproj",
+  "projectFilePath": "E:\\Repos\\SkillExpose\\SkillExpose.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maver\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\maver\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
