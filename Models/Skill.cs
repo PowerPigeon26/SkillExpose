@@ -12,8 +12,8 @@
         public string Notes { get; set; } = "";
         public string YTVideoName { get; set; } = "";
         public string YTCode { get; set; } = "";
-        public int TSStart { get; set; }
-        public int TSEnd { get; set; }
+        public string TSStart { get; set; } = "";
+        public string TSEnd { get; set; } = "";
         
 
     }

@@ -27,10 +27,10 @@ namespace SkillExpose
         {
             _conn.Execute("UPDATE skills SET Name = @name, Game = @game, Type = @type, InGameDescription = @inGameDes, " +
                 "AdditionalDescription = @additionalDes, Notes = @notes, YTVideoName = @youtubeVidName, YTCode = @youtubeCode, " +
-                "TSStart = @timestampStart, TSEnd = @timestampEnd", new { name = skill.Name, game = skill.Game, type = skill.Type,
-                inGameDes = skill.InGameDescription, additionalDes = skill.AdditionalDescription, notes = skill.Notes, 
+                "TSStart = @timestampStart, TSEnd = @timestampEnd WHERE ID = @id", new { name = skill.Name, game = skill.Game, 
+                type = skill.Type, inGameDes = skill.InGameDescription, additionalDes = skill.AdditionalDescription, notes = skill.Notes, 
                 youtubeVidName = skill.YTVideoName, youtubeCode = skill.YTCode, timestampStart = skill.TSStart, 
-                timestampEnd = skill.TSEnd});
+                timestampEnd = skill.TSEnd, id = skill.ID});
         }
     }
 }

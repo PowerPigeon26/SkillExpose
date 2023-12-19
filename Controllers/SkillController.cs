@@ -31,7 +31,7 @@ namespace SkillExpose.Controllers
 
             if (skill == null)
             {
-                return View("ProductNotFound");
+                return View("SkillNotFound");
             }
 
             return View(skill);
