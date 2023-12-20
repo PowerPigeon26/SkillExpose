@@ -10,7 +10,9 @@ namespace SkillExpose
         public Skill GetSkill(int id);
         public void UpdateSkill(Skill skill);
         public void InsertSkill(Skill skillToInsert);
-        public IEnumerable<Game> GetGames();
+        public IEnumerable<VideoGame> GetGames();
         public Skill AssignGame();
+        public void DeleteSkill(Skill skill);
+
     }
 }

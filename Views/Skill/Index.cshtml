@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<Skill>
 
 <h2>Skills</h2>
+
+<div style="display: block">
+    <a href="/Skill/InsertSkill/">Log a new skill!</a>
+</div>
+
 <table class="table">
     <tr>
         <th>Skill Name</th>
@@ -8,7 +13,7 @@
         <th>Game</th>
     </tr>
 
-    @foreach (var skill in @Model)
+    @foreach (var skill in Model)
     {
         <tr>
             <td><a href=/Skill/ViewSkill/@skill.ID>@skill.Name</a></td>

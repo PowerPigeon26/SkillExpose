@@ -20,15 +20,20 @@ namespace SkillExpose
 
         public Skill GetSkill(int id)
         {
-            return _conn.QuerySingle<Skill>("SELECT * FROM skills WHERE ID = @id",
+            var skill = _conn.QuerySingle<Skill>("SELECT * FROM skills WHERE ID = @id",
                 new { id = id });
+
+            var gameList = GetGames();
+            skill.Games = gameList;
+
+            return skill;
         }
 
         public void UpdateSkill(Skill skill)
         {
-            _conn.Execute("UPDATE skills SET Name = @name, Game = @game, Type = @type, InGameDescription = @inGameDes, " +
+            _conn.Execute("UPDATE skills SET Name = @name, GameID = @gameID, Game = @game, Type = @type, InGameDescription = @inGameDes, " +
                 "AdditionalDescription = @additionalDes, Notes = @notes, YTVideoName = @youtubeVidName, YTCode = @youtubeCode, " +
-                "TSStart = @timestampStart, TSEnd = @timestampEnd WHERE ID = @id", new { name = skill.Name, game = skill.Game, 
+                "TSStart = @timestampStart, TSEnd = @timestampEnd WHERE ID = @id", new { name = skill.Name, gameID = skill.GameID, game = skill.Game, 
                 type = skill.Type, inGameDes = skill.InGameDescription, additionalDes = skill.AdditionalDescription, notes = skill.Notes, 
                 youtubeVidName = skill.YTVideoName, youtubeCode = skill.YTCode, timestampStart = skill.TSStart, 
                 timestampEnd = skill.TSEnd, id = skill.ID});
@@ -36,11 +41,12 @@ namespace SkillExpose
 
         public void InsertSkill(Skill skillToInsert)
         {
-            _conn.Execute("INSERT INTO skills (NAME, GAME, TYPE, INGAMEDESCRIPTION, ADDITIONALDESCRIPTION, NOTES, YTVIDEONAME, YTCODE, " +
-                "TSSTART, TSEND) VALUES (@name, @game, @type, @inGameDes, @additionalDes, @notes, @youtubeVidName, @youtubeCode, " +
+            _conn.Execute("INSERT INTO skills (NAME, GAMEID, GAME, TYPE, INGAMEDESCRIPTION, ADDITIONALDESCRIPTION, NOTES, YTVIDEONAME, YTCODE, " +
+                "TSSTART, TSEND) VALUES (@name, @gameID, @game, @type, @inGameDes, @additionalDes, @notes, @youtubeVidName, @youtubeCode, " +
                 "@timestampStart, @timestampEnd);", new
                 {
                     name = skillToInsert.Name,
+                    gameID = skillToInsert.GameID,
                     game = skillToInsert.Game,
                     type = skillToInsert.Type,
                     inGameDes = skillToInsert.InGameDescription,
@@ -53,30 +59,23 @@ namespace SkillExpose
                 });
         }
 
-        public IEnumerable<Game> GetGames()
+        public IEnumerable<VideoGame> GetGames()
         {
-            return _conn.Query<Game>("SELECT * FROM categories;");
+            return _conn.Query<VideoGame>("SELECT * FROM games;");
         }
 
         public Skill AssignGame()
         {
-            throw new NotImplementedException();
+            var gameList = GetGames();
+            var skill = new Skill();
+            skill.Games = gameList;
+
+            return skill;
         }
 
-        public void SoftDelete(int id)
+        public void DeleteSkill(Skill skill)
         {
-            var skill = GetSkill(id);
-
-            // Flagging the Skill as Deleted //
-            skill.IsDeleted = true;
-
-            UpdateSkill(skill);
-        }
-
-        // You or Admin //
-        public void HardDelte()
-        {
-            // Permant Delete From the Database //
+            _conn.Execute("DELETE FROM skills WHERE ID = @id;", new { id = skill.ID });
         }
     }
 }

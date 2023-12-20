@@ -15,8 +15,7 @@
         public string TSStart { get; set; } = "";
         public string TSEnd { get; set; } = "";
         public bool IsDeleted { get; set; } = false;
-
-        public IEnumerable<Game> Games { get; set; }
+        public IEnumerable<VideoGame> Games { get; set; }
         
 
     }

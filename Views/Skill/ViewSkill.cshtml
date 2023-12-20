@@ -9,7 +9,16 @@
 <h5>Skill Description:</h5>
 <p>@Model.InGameDescription</p>
 
-@* <iframe width="560" height="315" src="https://www.youtube.com/embed/RSPEOFk7FiE?si=EkSuTC7e0DaUSPX3&start=60&end=65" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> *@
+@Html.Raw(Model.YTCode)
+
 <div style="display: block">
     <a href="/Skill/UpdateSkill/@Model.ID">Update this skill!</a>
+</div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteSkill", "Skill", "Post"))
+    {
+        <input type="hidden" asp-for="ID" value="@Model.ID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this skill" />
+    }
 </div>
