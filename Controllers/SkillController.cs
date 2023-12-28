@@ -78,8 +78,12 @@ namespace SkillExpose.Controllers
 
         public IActionResult InsertSkillToDatabase(Skill skillToInsert)
         {
-            repo.InsertSkill(skillToInsert);
 
+            var nameState = ModelState["Name"];
+            if (nameState?.Errors.Count == 0)
+            {
+                repo.InsertSkill(skillToInsert);
+            }
             return RedirectToAction("Index");
         }
 

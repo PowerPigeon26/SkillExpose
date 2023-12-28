@@ -8,52 +8,85 @@
 
     <div class="form-group">
         <label for="">Select a Game:</label>
-        <select class="form-control" name="Game" value="">
+        <select class="form-control" name="Game" id="gameDropdown" onchange="updateGameInfo(this)">
+            <option value="@Model.Game" data-gameID="@Model.GameID"></option>
             @foreach (var game in Model.Games)
             {
-                <option value="@game.Name">@game.Name</option>
+                <option value="@game.Name" data-gameID="@game.GameID">@game.Name</option>
             }
         </select>
     </div>
 
-    <div class="form-group">
-        <label for="">Match game with appropriate game ID:</label>
-        <select class="form-control" name="GameID" value="">
-            @foreach (var game in Model.Games)
-            {
-                <option value="@game.GameID">@game.GameID (@game.Name)</option>
-            }
-        </select>
-    </div>
+    <input asp-for="GameID" type="hidden" id="selectedGamesID" />
 
     <label asp-for="Name" class="control-label">Skill Name:</label>
-    <input type="text" name="Name" class="form-control" value="" />
+    <input type="text" name="Name" class="form-control character-counter" maxlength="100" />
+    <div style="margin-bottom: 10px;">0 / 100</div>
 
     <label asp-for="Type" class="control-label">Skill Type:</label>
-    <input type="text" name="Type" class="form-control" value="" />
+    <input type="text" name="Type" class="form-control character-counter" maxlength="100" />
+    <div style="margin-bottom: 10px;">0 / 100</div>
 
     <label asp-for="InGameDescription" class="control-label">Game's Description:</label>
-    <input type="text" name="InGameDescription" class="form-control" value="" />
+    <input type="text" name="InGameDescription" class="form-control character-counter" maxlength="1000" />
+    <div style="margin-bottom: 10px;">0 / 1000</div>
 
     <label asp-for="AdditionalDescription" class="control-label">Additional Description:</label>
-    <input type="text" name="AdditionalDescription" class="form-control" value="" />
+    <input type="text" name="AdditionalDescription" class="form-control character-counter" value="" maxlength="1000" />
+    <div style="margin-bottom: 10px;">0 / 1000</div>
 
     <label asp-for="Notes" class="control-label">Notes:</label>
-    <input type="text" name="Notes" class="form-control" value="" />
+    <input type="text" name="Notes" class="form-control character-counter" value="" maxlength="1000" />
+    <div style="margin-bottom: 10px;">0 / 1000</div>
 
     <label asp-for="YTVideoName" class="control-label">Youtube Video Name:</label>
-    <input type="text" name="YTVideoName" class="form-control" value="" />
+    <input type="text" name="YTVideoName" class="form-control character-counter" value="" maxlength="100" />
+    <div style="margin-bottom: 10px;">0 / 100</div>
 
     <label asp-for="YTCode" class="control-label">Youtube Code:</label>
-    <input type="text" name="YTCode" class="form-control" value="" />
+    <input type="text" name="YTCode" class="form-control character-counter" value="" maxlength="1000" />
+    <div style="margin-bottom: 10px;">0 / 1000</div>
 
     <label asp-for="TSStart" class="control-label">Timestamp Start:</label>
-    <input type="text" name="TSStart" class="form-control" value="" />
+    <input type="text" name="TSStart" class="form-control character-counter" value="" maxlength="50" />
+    <div style="margin-bottom: 10px;">0 / 50</div>
 
     <label asp-for="TSEnd" class="control-label">Timestamp End:</label>
-    <input type="text" name="TSEnd" class="form-control" value="" />
+    <input type="text" name="TSEnd" class="form-control character-counter" value="" maxlength="50" />
+    <div style="margin-bottom: 10px;">0 / 50</div>
 
 
     <input type="submit" value="Log skill!" class="btn btn-primary" />
 }
 
+<script>
+    // Get all elements with the class "character-counter"
+    var characterCounters = document.querySelectorAll('.character-counter');
+
+    // Loop through each element and attach an input event listener
+    characterCounters.forEach(function (element) {
+        // Get the character count display element for each input
+        var charCount = element.nextElementSibling; // Assuming the counter is the next sibling element
+
+        // Attach an input event listener to the input field
+        element.addEventListener('input', function () {
+            // Get the current value of the input field
+            var currentVal = element.value;
+
+            // Get the maximum length allowed
+            var maxLength = parseInt(element.getAttribute('maxlength'));
+
+            // Update the character count display
+            charCount.textContent = currentVal.length + ' / ' + maxLength + ' characters';
+        });
+    });
+</script>
+
+
+<script>
+    function updateGameInfo(selectElement) {
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+        var selectedGameID = selectedOption.getAttribute('data-gameid');
+        document.getElementById('selectedGamesID').value = selectedGameID;
+    }
+</script>
