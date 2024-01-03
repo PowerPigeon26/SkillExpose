@@ -40,7 +40,7 @@ namespace SkillExpose.Models
         [StringLength(50)]
         public string TSEnd { get; set; } = "";
 
-        public bool IsDeleted { get; set; } = false;
+        public bool IsDeleted { get; set; } = false; //add soft delete later
         public IEnumerable<VideoGame> Games { get; set; }
         
 
