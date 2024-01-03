@@ -1,12 +1,17 @@
 ﻿@model IEnumerable<Skill>
 
+
+
 <h2>Skills</h2>
 
 <div style="display: block">
     <a href="/Skill/InsertSkill/">Log a new skill!</a>
 </div>
 
-<table class="table">
+<input type="text" id="searchSkill" placeholder="Search for skill names">
+<input type="text" id="searchGame" placeholder="Search for game names">
+
+<table class="table" id="skillsTable">
     <tr>
         <th>Skill Name</th>
         <th>Type</th>
@@ -23,3 +28,48 @@
     }
 
 </table>
+
+<script>
+    // Get the input fields and table
+    var searchSkillInput = document.getElementById("searchSkill");
+    var searchGameInput = document.getElementById("searchGame");
+    var table = document.getElementById("skillsTable");
+
+    // Add event listener to each input field for keypress
+    searchSkillInput.addEventListener("keypress", function (event) {
+        if (event.keyCode === 13) {
+            handleSearch();
+        }
+    });
+
+    searchGameInput.addEventListener("keypress", function (event) {
+        if (event.keyCode === 13) {
+            handleSearch();
+        }
+    });
+
+    function handleSearch() {
+        // Get the values of the input fields, convert to lowercase for case-insensitive search
+        var filterSkill = searchSkillInput.value.toLowerCase();
+        var filterGame = searchGameInput.value.toLowerCase();
+
+        // Get all rows in the table
+        var rows = table.getElementsByTagName("tr");
+
+        // Loop through each row and hide or show based on the filters
+        for (var i = 1; i < rows.length; i++) {
+            var skillName = rows[i].getElementsByTagName("td")[0].innerText.toLowerCase();
+            var gameName = rows[i].getElementsByTagName("td")[2].innerText.toLowerCase();
+
+            var skillMatch = skillName.includes(filterSkill);
+            var gameMatch = gameName.includes(filterGame);
+
+            if (skillMatch && gameMatch) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
